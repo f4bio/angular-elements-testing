@@ -7,13 +7,12 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
     <span>Popup: {{message}}</span>
     <button (click)="closed.next()">&#x2716;</button>
   `,
-  // host: {
-  //   '[@state]': 'state',
-  // },
+  // tslint:disable-next-line:no-host-metadata-property
+  host: { '[@state]': 'state', },
   animations: [
     trigger('state', [
-      state('opened', style({transform: 'translateY(0%)'})),
-      state('void, closed', style({transform: 'translateY(100%)', opacity: 0})),
+      state('opened', style({ transform: 'translateY(0%)' })),
+      state('void, closed', style({ transform: 'translateY(100%)', opacity: 0 })),
       transition('* => *', animate('100ms ease-in')),
     ])
   ],

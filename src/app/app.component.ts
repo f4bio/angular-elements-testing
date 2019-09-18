@@ -12,7 +12,7 @@ import { PopupComponent } from './popup.component';
   `,
 })
 export class AppComponent {
-  @HostBinding() role;
+  // @HostBinding('my-popup') myPopup;
 
   constructor(injector: Injector, public popup: PopupService) {
     // Convert `PopupComponent` to a custom element.
